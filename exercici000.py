@@ -54,8 +54,16 @@ def app_draw():
     screen.fill(WHITE)
     utils.draw_grid(pygame, screen, 50)
 
-    #Resol aqui l'erxercici    
-    
+    #Resol aqui l'erxercici  
+    pygame.draw.rect(screen, PINK, (150, 200, 50, 50), 5)
+
+    pygame.draw.polygon(screen, GREEN, [(275, 200), (275 - 28, 248), (275 + 28, 248)], 5)
+
+    pygame.draw.line(screen, BLUE, (350, 200), (400, 250), 5)
+    pygame.draw.line(screen, BLUE, (350, 250), (400, 200), 5)
+
+    pygame.draw.circle(screen, RED, (475, 225), 25, 5)
+
     pygame.display.update()
 
 if __name__ == "__main__":

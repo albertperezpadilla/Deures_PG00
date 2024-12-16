@@ -25,7 +25,16 @@ pygame.display.set_caption('Window Title')
 
 # Bucle de l'aplicació
 def main():
+    global im_shinnosuke, im_shiro
     is_looping = True
+
+    path_shinnosuke = os.path.join(os.path.dirname(__file__), "./assets/exercici002/shinnosuke.png")
+    im_shinnosuke = pygame.image.load(path_shinnosuke).convert_alpha()
+    im_shinnosuke = utils.scale_image(pygame, im_shinnosuke, target_width=100)
+
+    path_shiro = os.path.join(os.path.dirname(__file__), "./assets/exercici002/shiro.png")
+    im_shiro = pygame.image.load(path_shiro).convert_alpha()
+    im_shiro = utils.scale_image(pygame, im_shiro, target_width=75)
 
     while is_looping:
         is_looping = app_events()
@@ -54,7 +63,9 @@ def app_draw():
     screen.fill(WHITE)
     utils.draw_grid(pygame, screen, 50)
 
-    #Resol aqui l'erxercici    
+    #Resol aqui l'erxercici
+    screen.blit(im_shinnosuke, (325, 160))
+    screen.blit(im_shiro, (225, 205))    
     
     pygame.display.update()
 

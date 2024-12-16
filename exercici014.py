@@ -10,11 +10,7 @@ import utils
 # Definir colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-GRAY = (200, 200, 200)
-PINK = (255, 105, 180)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-RED = (255, 0, 0)
+BLUE = (50, 120, 200)
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -51,23 +47,24 @@ def app_run():
 
 # Dibuixar
 def app_draw():
+    
+    # Pintar el fons de blanc
     screen.fill(WHITE)
+
+    # Dibuixar la graella
     utils.draw_grid(pygame, screen, 50)
 
-    odd = True
-    for cnt in range(225, 0, -25):
-        if odd:
-            color = RED
-        else:
-            color = WHITE
-            
-        pygame.draw.circle(screen, color, (350, 250), cnt)
-        odd = not odd
+    # Dibuixar les dades
+    for counter in range(0, 11):
+        light = counter * (255 / 10)
+        x = 50 + (counter * 50)
 
-    # Bucle Relleus
-    for cnt in range(25, 250, 25):
-        pygame.draw.circle(screen, BLACK, (350, 250), cnt, 5)
+        pygame.draw.rect(screen, (light, 0, 0), (x, 150, 50, 50))
+        pygame.draw.rect(screen, (0, light, 0), (x, 200, 50, 50))
+        pygame.draw.rect(screen, (0, 0, light), (x, 250, 50, 50))
+        pygame.draw.rect(screen, (light, light, light), (x, 300, 50, 50))
 
+    # Actualitzar el dibuix a la finestra
     pygame.display.update()
 
 if __name__ == "__main__":

@@ -54,7 +54,31 @@ def app_draw():
     screen.fill(WHITE)
     utils.draw_grid(pygame, screen, 50)
 
-    #Resol aqui l'erxercici    
+    #Resol aqui l'erxercici
+    pygame.draw.rect(screen, RED, (50, 50,550, 100))
+
+    fontT = pygame.font.SysFont("Arial", 60)
+    text = fontT.render('HEADLINE NEWS', True, WHITE)
+    screen.blit(text, (75, 70))
+
+    fontS = pygame.font.SysFont("Courier New", 40, bold=True)
+    text = fontS.render('World goes Wrong!', True, BLACK)
+    screen.blit(text, (50, 160))
+
+    text = fontS.render('YEP#', True, GREEN)
+    screen.blit(text, (510, 155))
+
+    fontB = pygame.font.SysFont("Arial", 28)
+    text0 = fontB.render("Lorem ipsum dolor sit amet, consectetur", True, BLACK)
+    screen.blit(text0, (50, 250))
+
+    text1 = fontB.render("adipiscing elit, sed do eiusmod tempor", True, BLACK)
+    screen.blit(text1, (50, 285))
+
+    text2 = fontB.render("incididunt ut labore et dolore magna aliqua.", True, BLACK)
+    screen.blit(text2, (50, 320))
+
+    pygame.display.update()   
     
     pygame.display.update()
 
